@@ -3,80 +3,65 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <div class="container mt-5">
-    <RouterView />
+  <div class="app-container">
+    <div class="content-card">
+      <RouterView />
+    </div>
   </div>
 </template>
 
-
-
-
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+/* Gradient Background */
+body {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  font-family: 'Poppins', sans-serif;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
+/* Centered App Container */
 .app-container {
-  max-width: 800px; 
-  margin: 0 auto;   
-  padding: 5px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
 }
 
-nav {
+/* Content Card */
+.content-card {
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+  color: #333;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
   width: 100%;
-  font-size: 12px;
+}
+
+/* Navigation Styling */
+nav {
   text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
+  margin-bottom: 15px;
 }
 
 nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+  color: #2575fc;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: 0.3s;
 }
 
-nav a:first-of-type {
-  border: 0;
+nav a:hover {
+  background-color: #2575fc;
+  color: white;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-card {
+    padding: 15px;
   }
 }
 </style>
